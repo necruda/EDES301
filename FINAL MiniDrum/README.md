@@ -3,7 +3,7 @@ Hackster.io Link: https://www.hackster.io/aa338/edes-301-mini-drum-b5fde8
 
 <h2>Building Software Instructions</h2>
 
-h2>Operating Software Instructions</h2>
+<h2>Operating Software Instructions</h2>
 Operating the mini drum should be pretty intuitive as there is a whole program to go with it but here is some helpful starter information and also some specifics on how this basic mini drum actually works when you get to the sequencer.
 
 **Buttons**
