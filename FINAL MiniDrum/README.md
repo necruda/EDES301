@@ -6,6 +6,36 @@ Hackster.io Link: https://www.hackster.io/aa338/edes-301-mini-drum-b5fde8
 
 <h2>Building Software Instructions</h2>
 
+<h3>Threaded Digital Input Driver (threaded_input.py)</h3>
+
+Summary
+This file contains a single class, ThreadedInput, which serves as the low-level digital input driver for every physical button and touch pad in the project. It is the foundation that all other input managers (button_manager.py and pad_manager.py) are built on top of. Every physical button or pad gets its own ThreadedInput instance.
+
+Class: ThreadedInput
+
+This class monitors a single GPIO pin on a dedicated background thread, allowing the main program loop to continue running without being blocked waiting for button presses. It handles debouncing, edge detection, callback execution, and click latching.
+
+Constructor parameters:
+
+pin — the GPIO pin string to monitor (e.g. "P2_28")
+label — a human readable name used for print statements and error messages
+debounce_ms — how long in milliseconds to wait after a press before listening again, defaulting to 50ms. Buttons use 50ms and touch pads use 20ms for faster response
+
+Key methods:
+
+start(on_press, on_release) — begins the background monitoring thread and optionally binds callback functions to press and release events
+stop() — signals the background thread to stop running
+is_pressed() — returns the real-time hardware state of the pin, True if currently held down
+was_clicked() — returns True only once per press using a latch mechanism, then resets itself. This is the preferred method for buttons in the main loop to prevent a single press from registering multiple times across loop iterations
+
+Internal behavior:
+
+The monitor thread polls at 100Hz (every 10ms)
+It detects a press on a falling edge (HIGH to LOW) and a release on a rising edge (LOW to HIGH)
+On a falling edge it sets an internal _was_clicked flag and fires the on_press callback if one is bound
+On a rising edge it fires the on_release callback if one is bound
+The thread starts with a 100ms startup delay to allow the GPIO pin to settle before monitoring begins
+
 <h2>Operating Software Instructions</h2>
 
 Operating the mini drum should be pretty intuitive as there is a whole program to go with it but here is some helpful starter information and also some specifics on how this basic mini drum actually works when you get to the sequencer.
