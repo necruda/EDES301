@@ -314,7 +314,7 @@ I had three buttons, a SELECT button, a RIGHT/UP button, and LEFT/DOWN button. U
 
 Also three dials, one dial controls the cursor/playhead on the sequencer and also a scale that pops up when on the tempo/BPM prompt box, another dial controls the volume of the sounds going through the audio output, and the last controls the brightness of the OLED SPI screen itself.
 
-**CapacitiveTouchSensors**
+**Capacitive Touch Sensors**
 
 There are also three touch sensors, these only control the specific samples that are installed in the samples library (currently labeled kick, snare, and crash).
 
