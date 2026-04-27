@@ -1,4 +1,4 @@
-<h1>Mini Drum Machine</h1>
+<h1>DRUMMY 3000 - A mini drum machine</h1>
 
 **Author:** Alejandro Andrade-Risco
 
