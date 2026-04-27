@@ -20,6 +20,7 @@ Hackster.io Link: https://www.hackster.io/aa338/edes-301-mini-drum-b5fde8
 **Contributions**
 
 Erik Welsh - code is based on threaded_button.py
+
 Gemini AI - helped account for edge cases and small user experience features like debouncing and click latching
 
 **Summary**
@@ -123,6 +124,7 @@ _register_hit(pad_name) — internal callback fired by each ThreadedInput on a p
 **Contributions**
 
 Erik Welsh - code is based on potentiometer.py
+
 Gemini AI - helped with establishing discrete steps for the cursor, smoothing math, and tracking the most recent input changes in the dials
 
 **Summary**
@@ -213,6 +215,7 @@ The projects folder must exist or be creatable at the path specified. On a rebui
 **Contributions** 
 
 Erik Welsh - code is based on spi_screen.py
+
 Gemini AI - exact graphic details needed for polygons
 
 **Summary**
