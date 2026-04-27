@@ -21,7 +21,7 @@
 
 Erik Welsh - code is based on threaded_button.py
 
-Gemini AI - helped account for edge cases and small user experience features like debouncing and click latching
+Gemini AI - helped account for edge cases and small user experience features like debouncing and click latching, as well as understanding the internal behvaior for visualization purposes
 
 **Summary**
 
@@ -47,10 +47,10 @@ was_clicked() — returns True only once per press using a latch mechanism, then
 **Internal behavior:**
 
 The monitor thread polls at 100Hz (every 10ms)
-It detects a press on a falling edge (HIGH to LOW) and a release on a rising edge (LOW to HIGH)
-On a falling edge it sets an internal _was_clicked flag and fires the on_press callback if one is bound
-On a rising edge it fires the on_release callback if one is bound
-The thread starts with a 100ms startup delay to allow the GPIO pin to settle before monitoring begins
+It detects a press on a falling edge (HIGH to LOW) and a release on a rising edge (LOW to HIGH).
+On a falling edge it sets an internal _was_clicked flag and fires the on_press callback if one is bound.
+On a rising edge it fires the on_release callback if one is bound.
+The thread starts with a 100ms startup delay to allow the GPIO pin to settle before monitoring begins.
 
 <h3>Button Manager (button_manager.py)</h3>
 
