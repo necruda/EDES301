@@ -211,6 +211,7 @@ The projects folder must exist or be creatable at the path specified. On a rebui
 <h3>Screen Manager (screen_manager.py)</h3>
 
 **Contributions** 
+
 Erik Welsh - code is based on spi_screen.py
 Gemini AI - exact graphic details needed for polygons
 
