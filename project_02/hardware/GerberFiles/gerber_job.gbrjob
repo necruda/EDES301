@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2026-05-07T07:47:59Z",
+        "GenerationSoftware": {
+            "Application": "Fusion Electronics",
+            "Vendor": "Autodesk",
+            "Version": "9.7.0"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.1978,
+        "LayerNumber": 4,
+        "Name": {
+            "ProjectId": "RAVEN - Final Transponder Layout"
+        },
+        "Owner": "Alejandro Andrade <aa338@rice.edu>",
+        "Size": {
+            "X": 73.66,
+            "Y": 73.66
+        }
+    }
+}
