@@ -14,6 +14,7 @@ The JST 12-pin Connector is what we use to connect to our flight computer board 
 
 <h3> CC1200 - Transmitter </h3>
 The CC1200 is simply the main transmitter, the RF backend, and it mainly connects to the JST 12-pin connector and the RF Filter which itself connects to the CC1190 (talked about later). Some important things to know are the following. 
+
 - The pins with resistors before the JST connects with the CC1200 are simply used as test points to test the signal
 - There is a reset button that allows for resetting the CC1200
 - There is a long chain of decoupling capacitors that are simply used for power filtering, especially useful since we have RF traces and components that need as little noise as possible
@@ -27,3 +28,11 @@ The CC1200 is simply the main transmitter, the RF backend, and it mainly connect
 The RF filter is important as we're dealing with RF traces that are very sensitive and we have enough link budget to have this, we originally also wanted a SAW filter but that dug too much into link budget. This RF filter is the intermediate connection between the CC1200 and CC1190, and after the RF trace passes through the RF filter we put a coupler to then connect to a SMA port that allows us to probe the signal to see if anything messes up before getting to the CC1190. The RF filter is also crucial because it allows us to turn 4 RF traces into just 1 RF trace.
 
 <h3> CC1190 </h3>
+The CC1190 is the RF front end, for simplicity sake you can think of it as a component dedicated to more complex filtering for the RF trace. It's connected to the JST for power and also connects to a coupler as a test point, and the whip antenna which is what we are using to communicate to the ground station. It also has the LNA EN LP and PA EN LP traces which connect back to the microcontroller through the JST. Furthermore, there are also a bunch of decoupling capacitors just like there were for the CC1200. In total, there are 2 SMA ports directly connected to the CC1190 and by that logic the coupler as well, one is the one used for the antenna, the other used as a signal test point. Finally, there is also a similar power filter for the CC1190.
+
+<h3> NEO-M9N </h3>
+The NEO-M9N is the GPS module, it's what is processing the information coming from the patch antenna. It also has a reset button like the CC1190. It's important to note that the the RF traces coming off of the NEO-M9N are about 1.5GHZ, not 915MHz like that for the CC1200 and CC1190. The NEO-M9N connects directly to the JST connector and also a coupler which connects to the active patch antenna, the ANN-MB5. Hence, there are 2 SMA ports related to the GPS portion of the PCB. The coupler has specifically been chosen to operate with 1.5GHz. One last note is that in the actual PCB layout we failed to put the GPS related traces on the bottom layer, though ideally we would've traced the GPS portion on the bottom layer to isolate the 2 different frequency RF traces.
+
+Helpful Tip:
+A lot of this design is inspired off of the datasheets from the main components we have. I highly suggest checking out the data sheets for the CC1190 and CC1200 and NEO-M9N. Also here is the link to an official TI Boosterpack that I consulted to come up with the design for this PCB.
+Link to Booster Pack - https://www.ti.com/tool/BOOSTXL-CC1120-90 
