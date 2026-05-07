@@ -1,4 +1,4 @@
-<h1>RF Transponder - With GPS and RF functionality</h1>
+<h1>Rice ECLIPSE RF Transponder - With GPS and RF functionality</h1>
 
 **Author:** Alejandro Andrade-Risco and AVIO R&D
 
