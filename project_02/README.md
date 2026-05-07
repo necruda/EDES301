@@ -1,6 +1,7 @@
 <h1>RF Transponder - With GPS and RF functionality</h1>
 
 **Author:** Alejandro Andrade-Risco and AVIO R&D
+
 **Special Thanks to:** Deepak Narayan and Erik Welsh
 
 <h2> Goal </h2>
